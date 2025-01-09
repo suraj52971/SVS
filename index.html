@@ -287,7 +287,54 @@
             }
         }
 
-   
+       .whole-carousel{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      
+    }
+
+    .carousel-container {
+      position: relative;
+      width: 80%;
+      max-width: 800px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-image {
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .carousel-nav {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background-color: #ccc;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background-color: #555;
+    }
+        
 
 
     </style>
@@ -318,6 +365,29 @@
        <div class="notice">📞 Phone: 9709690201, 8340566792  📞</div>
     </div>
   </div>
+
+    <div class="whole-carousel">
+    
+  <div class="carousel-container">
+    <div class="carousel">
+      <img src="images/photo9.jpg" alt="Photo 9" class="carousel-image"> <!-- Cloned last image -->
+      <img src="images/photo5.jpg" alt="Photo 5" class="carousel-image">
+      <img src="images/photo6.jpg" alt="Photo 6" class="carousel-image">
+      <img src="images/photo7.jpg" alt="Photo 7" class="carousel-image">
+      <img src="images/photo8.jpg" alt="Photo 8" class="carousel-image">
+      <img src="images/photo9.jpg" alt="Photo 9" class="carousel-image">
+      <img src="images/photo5.jpg" alt="Photo 5" class="carousel-image"> <!-- Cloned first image -->
+    </div>
+    <div class="carousel-nav">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+    </div>
+    
 
 
 
@@ -485,6 +555,8 @@
         </div>
     </section>
 
+    
+
     <section id="portfolio">
         <div class="card">
             <h2>Portfolio</h2>
@@ -523,7 +595,59 @@
         <p>Connect with us on <a href="https://www.facebook.com/people/SIDS-Vidya-Sansthan/61560388648946/">Facebook</a> | <a href="https://www.youtube.com/@SidsVidyaSansthan">YouTube</a></p>
         <p>&copy; 2025 SIDS Vidya Sansthan</p>
     </footer>
+<script>
+    const carousel = document.querySelector('.carousel');
+    const dots = document.querySelectorAll('.dot');
 
+    let currentIndex = 1; // Start at the first real image
+    const totalImages = dots.length;
+
+    // Set initial position
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    function updateCarousel() {
+      // Move carousel
+      carousel.style.transition = 'transform 0.5s ease-in-out';
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      // Update active dot
+      dots.forEach(dot => dot.classList.remove('active'));
+      const dotIndex = (currentIndex - 1 + totalImages) % totalImages; // Adjust for cloned images
+      dots[dotIndex].classList.add('active');
+    }
+
+    function handleTransitionEnd() {
+      // Seamless looping logic
+      if (currentIndex === 0) {
+        // If at the cloned last image, jump to the real last image
+        carousel.style.transition = 'none';
+        currentIndex = totalImages;
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+      } else if (currentIndex === totalImages + 1) {
+        // If at the cloned first image, jump to the real first image
+        carousel.style.transition = 'none';
+        currentIndex = 1;
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+    }
+
+    // Add event listeners to dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = index + 1; // Adjust for cloned images
+        updateCarousel();
+      });
+    });
+
+    // Auto-scroll every 3 seconds
+    setInterval(() => {
+      currentIndex++;
+      updateCarousel();
+    }, 3000);
+
+    // Listen for transition end to handle seamless looping
+    carousel.addEventListener('transitionend', handleTransitionEnd);
+</script>
 
 
 </body>
