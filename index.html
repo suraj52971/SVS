@@ -436,6 +436,7 @@
         <a href="#about">About</a>
         <a href="#facilities">Facilities</a>
         <a href="#projects">Projects</a>
+        <a href="#results">Results</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#blog">Blog</a>
         <a href="#contact">Contact</a>
@@ -696,9 +697,12 @@
         <p>Connect with us on <a href="https://www.facebook.com/people/SIDS-Vidya-Sansthan/61560388648946/">Facebook</a> | <a href="https://www.youtube.com/@SidsVidyaSansthan">YouTube</a></p>
         <p>&copy; 2025 SIDS Vidya Sansthan</p>
     </footer>
+
 <script>
-    const carousel = document.querySelector('.carousel');
-    const dots = document.querySelectorAll('.dot');
+  // Carousel Logic
+  document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.querySelector(".carousel");
+    const dots = document.querySelectorAll(".dot");
 
     let currentIndex = 1; // Start at the first real image
     const totalImages = dots.length;
@@ -708,25 +712,25 @@
 
     function updateCarousel() {
       // Move carousel
-      carousel.style.transition = 'transform 0.5s ease-in-out';
+      carousel.style.transition = "transform 0.5s ease-in-out";
       carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 
       // Update active dot
-      dots.forEach(dot => dot.classList.remove('active'));
+      dots.forEach((dot) => dot.classList.remove("active"));
       const dotIndex = (currentIndex - 1 + totalImages) % totalImages; // Adjust for cloned images
-      dots[dotIndex].classList.add('active');
+      dots[dotIndex].classList.add("active");
     }
 
     function handleTransitionEnd() {
       // Seamless looping logic
       if (currentIndex === 0) {
         // If at the cloned last image, jump to the real last image
-        carousel.style.transition = 'none';
+        carousel.style.transition = "none";
         currentIndex = totalImages;
         carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
       } else if (currentIndex === totalImages + 1) {
         // If at the cloned first image, jump to the real first image
-        carousel.style.transition = 'none';
+        carousel.style.transition = "none";
         currentIndex = 1;
         carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
       }
@@ -734,7 +738,7 @@
 
     // Add event listeners to dots
     dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
+      dot.addEventListener("click", () => {
         currentIndex = index + 1; // Adjust for cloned images
         updateCarousel();
       });
@@ -747,9 +751,102 @@
     }, 3000);
 
     // Listen for transition end to handle seamless looping
-    carousel.addEventListener('transitionend', handleTransitionEnd);
-</script>
+    carousel.addEventListener("transitionend", handleTransitionEnd);
+  });
 
+  // Search Logic
+  const students = [
+    {
+      name: "Aarav Kishor",
+      roll: "01",
+      class: "4th",
+      subjects: {
+        Hindi: 85,
+        English: 78,
+        Math: 92,
+        Science: 88,
+        Drawing: 90,
+        Computer: 95,
+        SST: 80,
+        GK: 75,
+      },
+    },
+    {
+      name: "Isha Gupta",
+      roll: "02",
+      class: "4th",
+      subjects: {
+        Hindi: 72,
+        English: 80,
+        Math: 68,
+        Science: 76,
+        Drawing: 85,
+        Computer: 88,
+        SST: 74,
+        GK: 78,
+      },
+    },
+    // Add more student records here
+  ];
+
+  function searchResults() {
+    const query = document.getElementById("search").value.trim().toLowerCase();
+    const resultsContainer = document.getElementById("results");
+    resultsContainer.innerHTML = "";
+
+    if (query === "") {
+      resultsContainer.innerHTML = `<p class="no-results">Please enter a name or roll number to search.</p>`;
+      return;
+    }
+
+    const student = students.find(
+      (s) => s.name.toLowerCase().includes(query) || s.roll.includes(query)
+    );
+
+    if (!student) {
+      resultsContainer.innerHTML = `<p class="no-results">No results found. Please enter the name or roll number correctly.</p>`;
+      return;
+    }
+
+    // Calculate total marks and percentage
+    const subjects = student.subjects;
+    const totalMarks = Object.values(subjects).reduce((sum, marks) => sum + marks, 0);
+    const percentage = ((totalMarks / (Object.keys(subjects).length * 100)) * 100).toFixed(2);
+
+    // Display student details and table
+    resultsContainer.innerHTML = `
+      <div class="student-table-container">
+        <div class="student-details">
+          <p><strong>Name:</strong> ${student.name}</p>
+          <p><strong>Roll:</strong> ${student.roll}</p>
+          <p><strong>Class:</strong> ${student.class}</p>
+        </div>
+        <table class="student-table">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Marks</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${Object.entries(subjects)
+              .map(([subject, marks]) => `<tr><td>${subject}</td><td>${marks}</td></tr>`)
+              .join("")}
+            <tr>
+              <td><strong>Total</strong></td>
+              <td><strong>${totalMarks}</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Percentage</strong></td>
+              <td><strong>${percentage}%</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+</script>
+    
 
 </body>
 </html>
