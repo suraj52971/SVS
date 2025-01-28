@@ -757,35 +757,140 @@
   // Search Logic
   const students = [
     {
-      name: "Aarav Kishor",
+      name: "Aarav kishor",
       roll: "01",
       class: "4th",
       subjects: {
-        Hindi: 85,
-        English: 78,
-        Math: 92,
-        Science: 88,
-        Drawing: 90,
-        Computer: 95,
-        SST: 80,
-        GK: 75,
+        English: 35,
+        Hindi: 37,
+        Sanskrit: 33,
+        Math: 27,
+        Science: 22,
+        SST: 47,
+        Computer: 09,
+        GK: 18,
       },
     },
-    {
-      name: "Isha Gupta",
+         {
+      name: "Aarish kumar",
       roll: "02",
       class: "4th",
       subjects: {
-        Hindi: 72,
-        English: 80,
-        Math: 68,
-        Science: 76,
-        Drawing: 85,
-        Computer: 88,
-        SST: 74,
+        English: 15,
+        Hindi: 09,
+        Sanskrit: 15,
+        Math: 26,
+        Science: 04,
+        SST: 20,
+        Computer: 06,
+        GK: 15,
+      },
+     },
+      {
+      name: "Aashish Kumar",
+      roll: "03",
+      class: "4th",
+      subjects: {
+        English: 15,
+        Hindi: 24,
+        Sanskrit: 15,
+        Math: 23,
+        Science: 09,
+        SST: 20,
+        Computer: 04,
+        GK: 06,
+      },
+    },
+      {
+      name: "Ayesha Rani",
+      roll: "04",
+      class: "4th",
+      subjects: {
+        English: 35,
+        Hindi: 37,
+        Sanskrit: 33,
+        Math: 27,
+        Science: 22,
+        SST: 47,
+        Computer: 09,
         GK: 78,
       },
     },
+          {
+      name: "Aditya Kumar",
+      roll: "05",
+      class: "4th",
+      subjects: {
+        English: 35,
+        Hindi: 37,
+        Sanskrit: 33,
+        Math: 27,
+        Science: 22,
+        SST: 47,
+        Computer: 09,
+        GK: 18,
+      },
+},
+      {
+      name: "Arnav kumar",
+      roll: "06",
+      class: "4th",
+      subjects: {
+        English: 15,
+        Hindi: 09,
+        Sanskrit: 15,
+        Math: 26,
+        Science: 04,
+        SST: 20,
+        Computer: 06,
+        GK: 15,
+      },
+     },
+      {
+      name: "Arpita Kumari",
+      roll: "07",
+      class: "4th",
+      subjects: {
+        English: 15,
+        Hindi: 24,
+        Sanskrit: 15,
+        Math: 23,
+        Science: 09,
+        SST: 20,
+        Computer: 04,
+        GK: 06,
+      },
+     },
+      {
+      name: "Ayush Kumar",
+      roll: "08",
+      class: "4th",
+      subjects: {
+        English: 35,
+        Hindi: 37,
+        Sanskrit: 33,
+        Math: 27,
+        Science: 22,
+        SST: 47,
+        Computer: 09,
+        GK: 78,
+      },
+    },
+            {
+      name: "Deepa Kumari",
+      roll: "09",
+      class: "4th",
+      subjects: {
+        English: 35,
+        Hindi: 37,
+        Sanskrit: 33,
+        Math: 27,
+        Science: 22,
+        SST: 47,
+        Computer: 09,
+        GK: 78,
+      },
+     },
     // Add more student records here
   ];
 
@@ -811,7 +916,7 @@
     // Calculate total marks and percentage
     const subjects = student.subjects;
     const totalMarks = Object.values(subjects).reduce((sum, marks) => sum + marks, 0);
-    const percentage = ((totalMarks / (Object.keys(subjects).length * 100)) * 100).toFixed(2);
+    const percentage = ((totalMarks / (Object.keys(subjects).length * 50)) * 100).toFixed(2);
 
     // Display student details and table
     resultsContainer.innerHTML = `
