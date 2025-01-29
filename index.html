@@ -697,7 +697,6 @@
         <p>Connect with us on <a href="https://www.facebook.com/people/SIDS-Vidya-Sansthan/61560388648946/">Facebook</a> | <a href="https://www.youtube.com/@SidsVidyaSansthan">YouTube</a></p>
         <p>&copy; 2025 SIDS Vidya Sansthan</p>
     </footer>
-
 <script>
   // Carousel Logic
   document.addEventListener("DOMContentLoaded", () => {
@@ -724,12 +723,10 @@
     function handleTransitionEnd() {
       // Seamless looping logic
       if (currentIndex === 0) {
-        // If at the cloned last image, jump to the real last image
         carousel.style.transition = "none";
         currentIndex = totalImages;
         carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
       } else if (currentIndex === totalImages + 1) {
-        // If at the cloned first image, jump to the real first image
         carousel.style.transition = "none";
         currentIndex = 1;
         carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
@@ -757,145 +754,35 @@
   // Search Logic
   const students = [
     {
-      name: "Aarav kishor",
+      name: "Aarav Kishor",
       roll: "01",
       class: "4th",
       subjects: {
-        English: 35,
-        Hindi: 37,
-        Sanskrit: 33,
-        Math: 27,
-        Science: 22,
-        SST: 47,
-        Computer: 09,
-        GK: 18,
+        Hindi: 42,
+        English: 38,
+        Math: 48,
+        Science: 44,
+        Drawing: 46,
+        Computer: 50,
+        SST: 40,
+        GK: 37,
       },
     },
-
-      {
-      name: "Aarish kumar",
+    {
+      name: "Isha Gupta",
       roll: "02",
       class: "4th",
       subjects: {
-        English: 15,
-        Hindi: 09,
-        Sanskrit: 15,
-        Math: 26,
-        Science: 04,
-        SST: 20,
-        Computer: 06,
-        GK: 15,
-      },
-    },
-      {
-      name: "Aashish Kumar",
-      roll: "03",
-      class: "4th",
-      subjects: {
-        English: 15,
-        Hindi: 24,
-        Sanskrit: 15,
-        Math: 23,
-        Science: 09,
-        SST: 20,
-        Computer: 04,
-        GK: 06,
-      },
-   },
-      {
-      name: "Ayesha Rani",
-      roll: "04",
-      class: "4th",
-      subjects: {
-        English: 15,
-        Hindi: 12,
-        Sanskrit: 15,
-        Math: 09,
-        Science: 07,
-        SST: 15,
-        Computer: 04,
-        GK: 09,
-      },
-    },
-          {
-      name: "Aditya Kumar",
-      roll: "05",
-      class: "4th",
-      subjects: {
-        English: 20,
-        Hindi: 19,
-        Sanskrit: 15,
-        Math: 07,
-        Science: 05,
-        SST: 15,
-        Computer: 07,
-        GK: 05,
-      },
-   },
-      {
-      name: "Arnav kumar",
-      roll: "06",
-      class: "4th",
-      subjects: {
-        English: 25,
-        Hindi: 15,
-        Sanskrit: 10,
-        Math: 09,
-        Science: 08,
-        SST: 05,
-        Computer: 03,
-        GK: 15,
-      },
-   },
-      {
-      name: "Arpita Kumari",
-      roll: "07",
-      class: "4th",
-      subjects: {
-        English: 25,
-        Hindi: 26,
-        Sanskrit: 15,
-        Math: 15,
-        Science: 15,
-        SST: 15,
-        Computer: 07,
-        GK: 09,
-      },
-},
-      {
-      name: "Ayush Kumar",
-      roll: "08",
-      class: "4th",
-      subjects: {
-        English: 15,
-        Hindi: 24,
-        Sanskrit: 15,
-        Math: 15,
-        Science: 07,
-        SST: 15,
-        Computer: 06,
-        GK: 15,
-      },
-   },
-            {
-      name: "Deepa Kumari",
-      roll: "09",
-      class: "4th",
-      subjects: {
-        English: 35,
-        Hindi: 37,
-        Sanskrit: 30,
-        Math: 26,
+        Hindi: 36,
+        English: 40,
+        Math: 34,
         Science: 39,
-        SST: 34,
-        Computer: 20,
-        GK: 23,
+        Drawing: 42,
+        Computer: 44,
+        SST: 41,
+        GK: 35,
       },
-   },
-    
-   
-          
-
+    },
     // Add more student records here
   ];
 
@@ -921,12 +808,14 @@
     // Calculate total marks and percentage
     const subjects = student.subjects;
     const totalMarks = Object.values(subjects).reduce((sum, marks) => sum + marks, 0);
-    const percentage = ((totalMarks / (Object.keys(subjects).length * 50)) * 100).toFixed(2);
+    const maxTotalMarks = Object.keys(subjects).length * 50; // Each subject is 50 marks
+    const percentage = ((totalMarks / maxTotalMarks) * 100).toFixed(2);
 
     // Display student details and table
     resultsContainer.innerHTML = `
       <div class="student-table-container">
         <div class="student-details">
+          <p><strong>School Name:</strong> [Your School Name Here]</p>
           <p><strong>Name:</strong> ${student.name}</p>
           <p><strong>Roll:</strong> ${student.roll}</p>
           <p><strong>Class:</strong> ${student.class}</p>
@@ -935,7 +824,7 @@
           <thead>
             <tr>
               <th>Subject</th>
-              <th>Marks</th>
+              <th>Marks (Out of 50)</th>
             </tr>
           </thead>
           <tbody>
