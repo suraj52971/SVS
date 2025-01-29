@@ -699,7 +699,8 @@
     </footer>
 
     
-<script>
+
+    <script>
   // Carousel Logic
   document.addEventListener("DOMContentLoaded", () => {
     const carousel = document.querySelector(".carousel");
@@ -725,10 +726,12 @@
     function handleTransitionEnd() {
       // Seamless looping logic
       if (currentIndex === 0) {
+        // If at the cloned last image, jump to the real last image
         carousel.style.transition = "none";
         currentIndex = totalImages;
         carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
       } else if (currentIndex === totalImages + 1) {
+        // If at the cloned first image, jump to the real first image
         carousel.style.transition = "none";
         currentIndex = 1;
         carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
@@ -760,14 +763,14 @@
       roll: "01",
       class: "4th",
       subjects: {
-        Hindi: 42,
-        English: 38,
-        Math: 48,
-        Science: 44,
-        Drawing: 46,
-        Computer: 50,
-        SST: 40,
-        GK: 37,
+        Hindi: 85,
+        English: 78,
+        Math: 92,
+        Science: 88,
+        Drawing: 90,
+        Computer: 95,
+        SST: 80,
+        GK: 75,
       },
     },
     {
@@ -775,14 +778,14 @@
       roll: "02",
       class: "4th",
       subjects: {
-        Hindi: 36,
-        English: 40,
-        Math: 34,
-        Science: 39,
-        Drawing: 42,
-        Computer: 44,
-        SST: 41,
-        GK: 35,
+        Hindi: 72,
+        English: 80,
+        Math: 68,
+        Science: 76,
+        Drawing: 85,
+        Computer: 88,
+        SST: 74,
+        GK: 78,
       },
     },
     // Add more student records here
@@ -810,14 +813,12 @@
     // Calculate total marks and percentage
     const subjects = student.subjects;
     const totalMarks = Object.values(subjects).reduce((sum, marks) => sum + marks, 0);
-    const maxTotalMarks = Object.keys(subjects).length * 50; // Each subject is 50 marks
-    const percentage = ((totalMarks / maxTotalMarks) * 100).toFixed(2);
+    const percentage = ((totalMarks / (Object.keys(subjects).length * 50)) * 100).toFixed(2);
 
     // Display student details and table
     resultsContainer.innerHTML = `
       <div class="student-table-container">
         <div class="student-details">
-          <p><strong>School Name:</strong> [Your School Name Here]</p>
           <p><strong>Name:</strong> ${student.name}</p>
           <p><strong>Roll:</strong> ${student.roll}</p>
           <p><strong>Class:</strong> ${student.class}</p>
@@ -826,7 +827,7 @@
           <thead>
             <tr>
               <th>Subject</th>
-              <th>Marks (Out of 50)</th>
+              <th>Marks</th>
             </tr>
           </thead>
           <tbody>
@@ -846,7 +847,8 @@
       </div>
     `;
   }
-</script>
+    </script>
+    
     
 
 </body>
