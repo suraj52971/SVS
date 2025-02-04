@@ -573,6 +573,31 @@
 
   }
 
+
+
+
+    .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 45%;
+            max-width: 350px;
+            border-radius: 5px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        @media (max-width: 600px) {
+            .gallery img {
+                width: 90%;
+            }
+        }
         
 
     </style>
@@ -829,8 +854,21 @@
 
     <section id="blog">
         <div class="card">
-            <h2>Blog</h2>
-            <p>Stay updated with our latest news and insights about education, technology, and more. Blog posts are coming soon!</p>
+        <h1>Our Educational Trip to Vaishali</h1>
+        <p class="date">February 2, 2025</p>
+        <p>On February 2, students of SIDS Vidya Sansthan embarked on a fascinating educational journey to Vaishali, a place of immense historical and cultural significance.</p>
+        <p>From the famous Ashokan Pillar to the sacred Relic Stupa, our students explored the rich history of this ancient city. Interactive sessions and engaging activities made this trip an unforgettable learning experience.</p>
+        <div class="gallery">
+            <img src="images/photo10.jpg" alt="Trip Photo 1">
+            <img src="images/photo11.jpg" alt="Trip Photo 2">
+            <img src="images/photo12.jpg" alt="Trip Photo 3">
+            <img src="images/photo13.jpg" alt="Trip Photo 4">
+            <img src="images/photo14.jpg" alt="Trip Photo 5">
+            <img src="images/photo15.jpg" alt="Trip Photo 6">
+        </div>
+        <p>The serene environment, historic monuments, and enthusiastic participation of students made this trip truly special. Such experiences help bridge the gap between textbooks and real-world learning.</p>
+        <p>As we concluded our journey, the smiles and excitement on our students' faces reflected the joy of learning beyond the classroom. This trip to Vaishali was not just a visit but a deep dive into history and culture.</p>
+
         </div>
         <div class="image-card">
     <img src="images/photo4.jpg" alt="Sample Photo">
@@ -2227,7 +2265,7 @@
                 <p class="sc-ex-na" style="text-align: center;">PT-2 Examination Result</p>
               </div>
               <div class="box_logo">
-               <img class="sch_logo" src="logo.jpg" alt="SIDS Vidya Sansthan Logo">
+               <img class="sch_logo" src="images/logo.jpg" alt="SIDS Vidya Sansthan Logo">
               </div>
           </div>
         <p class="sp-p-tl"><strong>Name:</strong> ${student.name || "N/A"}</p>
