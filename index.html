@@ -340,15 +340,29 @@
       color: #333;
     }
 
+   p {
+    display: block;
+    margin-block-start: 0.1em;
+    margin-block-end: 0.5em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+
+    .sc-rs-tl {
+      text-align: center;
+      color: #333;
+    }
+
     .search-container {
       display: flex;
       justify-content: center;
+      gap: 10px;
       margin: 20px 0;
     }
 
-    input[type="text"] {
-      width: 80%;
-      max-width: 500px;
+    input, select {
       padding: 12px;
       font-size: 16px;
       border: 2px solid #ccc;
@@ -357,7 +371,18 @@
       transition: 0.3s;
     }
 
-    input[type="text"]:focus {
+    input {
+      width: 60%;
+      max-width: 400px;
+    }
+
+    select {
+      width: 20%;
+      max-width: 150px;
+      cursor: pointer;
+    }
+
+    input:focus, select:focus {
       border-color: #007bff;
       box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
     }
@@ -367,18 +392,8 @@
       max-width: 600px;
       background-color: #fff;
       border-radius: 10px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 20px;
-    }
-
-    .student-details {
-      margin-bottom: 20px;
-      font-size: 16px;
-      color: #333;
-    }
-
-    .student-details p {
-      margin: 5px 0;
     }
 
     .student-table {
@@ -386,8 +401,7 @@
       border-collapse: collapse;
     }
 
-    .student-table th,
-    .student-table td {
+    .student-table th, .student-table td {
       border: 1px solid #ddd;
       padding: 10px;
       font-size: 14px;
@@ -396,7 +410,6 @@
 
     .student-table th {
       background-color: #f4f4f4;
-      color: #333;
     }
 
     .student-table tr:nth-child(even) {
@@ -407,20 +420,160 @@
       background-color: #f1f1f1;
     }
 
-    @media (max-width: 768px) {
-      .student-table th,
-      .student-table td {
-        font-size: 12px;
-        padding: 8px;
-      }
-    }
-
     .no-results {
       font-size: 16px;
       color: red;
       text-align: center;
-    }    
+    }
 
+    .container_cradential {
+            display: flex;
+            padding: 10px;
+            justify-content: center;
+            border: 1px solid #dbdbdb;
+            border-radius: 10px;
+            
+        }
+    .box_logo {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          
+            font-weight: bold;
+            
+        }
+    .box {
+            width: 400px;
+            height: 100px;
+            align-items: center;
+            font-weight: bold;
+            
+        }
+   .sch_logo {
+     height: 90px;
+     width: 90px;
+     border-radius: 50%;
+    }
+    .sc-ex-na{
+      font-size: 0.8rem;
+      color: #05275bab;
+
+    }
+    .sc-na {
+    display: block;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-block-end: 0.2em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+
+
+        
+        /* Responsive Styling */
+  @media (max-width: 768px) {
+
+   .sc-na {
+    display: block;
+    font-size: 1.rem;
+    text-align: center;
+    margin-block-end: 0.2em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+   }
+
+
+    }
+
+    @media (max-width: 650px) {
+
+   .sc-na {
+    display: block;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-block-end: 0.2em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+   }
+
+
+  }
+
+@media (max-width: 568px) {
+     .sc-na {
+    display: block;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-block-end: 0.2em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+   }
+
+      .student-table th, .student-table td {
+      border: 1px solid #ddd;
+      padding: 4px;
+      font-size: 12px;
+      text-align: left;
+    }
+       .sch_logo {
+      height: 65px;
+      width: 65px;
+      border-radius: 50%;
+    }
+  }
+    @media (max-width: 395px) {
+       .sc-na {
+    display: block;
+    font-size: 1.25rem;
+    text-align: center;
+    margin-block-end: 0.2em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+   }
+
+  }
+  @media (max-width: 360px) {
+       .sc-na {
+    display: block;
+    font-size: 1.25rem;
+    text-align: center;
+    margin-block-end: 0.2em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+   }
+      .sc-ex-na{
+      font-size: 0.65rem;
+      color: #05275bab;
+
+    }
+    .sp-p-tl{
+      font-size: 0.85rem;
+    }
+      .sch_logo {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
+
+
+  }
+
+        
 
     </style>
 </head>
@@ -436,7 +589,7 @@
         <a href="#about">About</a>
         <a href="#facilities">Facilities</a>
         <a href="#projects">Projects</a>
-        <a href="#results">Results</a>
+        <a href="#result">Results</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#blog">Blog</a>
         <a href="#contact">Contact</a>
@@ -636,15 +789,23 @@
     </section>
 
     <!-- Results Section -->
-    <section id=results">
-      <h1 class="rec">Results of PT-2 Examination</h1>
-       <div class="search-container">
-          <input type="text" id="search" placeholder="Enter name or roll number..." onkeyup="searchResults()">
-       </div>
-
-  <div id="results"></div>
+    <section id="result">
         
+  <h1 class="sc-rs-tl">PT-II EXAMINATION RESULTS</h1>
+  <div class="search-container">
+    <input type="text" id="search" placeholder="Enter name or roll number..." onkeyup="searchResults()">
+    <select id="classSelect" onchange="searchResults()">
+      <option value="all">All Classes</option>
+      <option value="3rd">Class 3</option>
+      <option value="4th">Class 4</option>
+      <option value="5th">Class 5</option>
+      <option value="6th">Class 6</option>
+      <option value="7th">Class 7</option>
+      <option value="8th">Class 8</option>
+    </select>
+  </div>
 
+  <div id="results" style="display: none;"></div>
     </section>
 
     
@@ -757,8 +918,9 @@
   });
 
   // Search Logic
-  const students = [
-  
+    const students = [
+
+
       {
       name: "Aarav kishor",
       roll: "01",
@@ -771,8 +933,8 @@
         Science: 22,
         SST: 47,
         Computer: 09,
-        GK: 18,
-      }, 
+        GK: 18
+      } 
 },
       {
       name: "Aarish kumar",
@@ -786,8 +948,8 @@
         Science: 04,
         SST: 20,
         Computer: 06,
-        GK: 15,
-      },
+        GK: 15
+      }
 },
       {
       name: "Aashish Kumar",
@@ -801,8 +963,8 @@
         Science: 09,
         SST: 20,
         Computer: 04,
-        GK: 06,
-      },
+        GK: 06
+      }
 },
       {
       name: "Ayesha Rani",
@@ -816,8 +978,8 @@
         Science: 07,
         SST: 15,
         Computer: 04,
-        GK: 09,
-      },
+        GK: 09
+      }
 },
           {
       name: "Aditya Kumar",
@@ -831,8 +993,8 @@
         Science: 05,
         SST: 15,
         Computer: 07,
-        GK: 05,
-      },
+        GK: 05
+      }
 },
       {
       name: "Arnav kumar",
@@ -846,8 +1008,8 @@
         Science: 08,
         SST: 05,
         Computer: 03,
-        GK: 15,
-      },
+        GK: 15
+      }
 },
       {
       name: "Arpita Kumari",
@@ -861,8 +1023,8 @@
         Science: 15,
         SST: 15,
         Computer: 07,
-        GK: 09,
-      },
+        GK: 09
+      }
 },
       {
       name: "Ayush Kumar",
@@ -876,8 +1038,8 @@
         Science: 07,
         SST: 15,
         Computer: 06,
-        GK: 15,
-      },
+        GK: 15
+      }
 },
             {
       name: "Deepa Kumari",
@@ -891,8 +1053,8 @@
         Science: 39,
         SST: 34,
         Computer: 20,
-        GK: 23,
-      },
+        GK: 23
+      }
 },
           {
       name: " Diya bharti",
@@ -906,8 +1068,8 @@
         Science: 09,
         SST: 15,
         Computer: 09,
-        GK: 15,
-      }, 
+        GK: 15
+      } 
 },
       {
       name: "Nidhi Kumari",
@@ -921,8 +1083,8 @@
         Science: 06,
         SST: 05,
         Computer: 07,
-        GK: 15,
-      },
+        GK: 15
+      }
 },
       {
       name: "Sarash Anmol",
@@ -936,8 +1098,8 @@
         Science: 0,
         SST: 5,
         Computer: 0,
-        GK: 0,
-      },
+        GK: 0
+      }
 },
       {
       name: "Manish Kumar",
@@ -951,8 +1113,8 @@
         Science: 15,
         SST: 20,
         Computer: 03,
-        GK: 15,
-      },
+        GK: 15
+      }
 },
           {
       name: "Nandini Kumari",
@@ -966,8 +1128,8 @@
         Science: 15,
         SST: 20,
         Computer: 03,
-        GK: 15,
-      },
+        GK: 15
+      }
 },
       {
       name: "Navdeep kumar",
@@ -981,8 +1143,8 @@
         Science: 15,
         SST: 15,
         Computer: 07,
-        GK: 15,
-      },
+        GK: 15
+      }
 },
       {
       name: "Pammi Poddar",
@@ -996,8 +1158,8 @@
         Science: 23,
         SST: 32,
         Computer: 15,
-        GK: 21,
-      },
+        GK: 21
+      }
 },
       {
       name: "Prashant Raj",
@@ -1011,8 +1173,8 @@
         Science: 41,
         SST: 9,
         Computer: 04,
-        GK: 0,
-      },
+        GK: 0
+      }
 },
             {
       name: "Radha Kumari",
@@ -1026,8 +1188,8 @@
         Science: 0,
         SST: 15,
         Computer: 6,
-        GK: 15,
-      },
+        GK: 15
+      }
 },
           {
       name: "Rahul Kumar",
@@ -1041,8 +1203,8 @@
         Science: 09,
         SST: 15,
         Computer: 05,
-        GK: 07,
-      }, 
+        GK: 07
+      } 
 },
       {
       name: "Rakshita Rajput",
@@ -1056,8 +1218,8 @@
         Science: 21,
         SST: 15,
         Computer: 09,
-        GK: 20,
-      },
+        GK: 20
+      }
 },
       {
       name: "Ritika Kumari",
@@ -1071,8 +1233,8 @@
         Science: 15,
         SST: 15,
         Computer: 05,
-        GK: 15,
-      },
+        GK: 15
+      }
 },
       {
       name: "Ritik Raushan",
@@ -1086,8 +1248,8 @@
         Science: 07,
         SST: 15,
         Computer: 05,
-        GK: 15,
-      },
+        GK: 15
+      }
 },
           {
       name: "Rubi Kumari",
@@ -1101,8 +1263,8 @@
         Science: 15,
         SST: 15,
         Computer: 05,
-        GK: 15,
-      },
+        GK: 15
+      }
 },
       {
       name: "Sachin kumar",
@@ -1116,8 +1278,8 @@
         Science: 15,
         SST: 15,
         Computer: 06,
-        GK: 09,
-      },
+        GK: 09
+      }
 },
       {
       name: "Shambhavi Kumari",
@@ -1131,8 +1293,8 @@
         Science: 07,
         SST: 15,
         Computer: 09,
-        GK: 15,
-      },
+        GK: 15
+      }
 },
       {
       name: "Shivam Kumar",
@@ -1146,8 +1308,8 @@
         Science: 08,
         SST: 15,
         Computer: 03,
-        GK: 05,
-      },
+        GK: 05
+      }
 },
             {
       name: "Shivam Raj",
@@ -1161,8 +1323,8 @@
         Science: 18,
         SST: 25,
         Computer: 15,
-        GK: 17,
-      }, 
+        GK: 17
+      } 
 },
       {
       name: "Shubham kumar",
@@ -1176,8 +1338,8 @@
         Science: 29,
         SST: 31,
         Computer: 22,
-        GK: 15,
-      },
+        GK: 15
+      }
 },
       {
       name: "Singham Raj",
@@ -1191,8 +1353,8 @@
         Science: 43,
         SST: 39,
         Computer: 23,
-        GK: 18,
-      },
+        GK: 18
+      }
 },
       {
       name: "Ritika Suman",
@@ -1206,8 +1368,8 @@
         Science: 04,
         SST: 25,
         Computer: 06,
-        GK: 15,
-      },
+        GK: 15
+      }
 },
           {
       name: "Sweety Kumari",
@@ -1221,8 +1383,8 @@
         Science: 05,
         SST: 25,
         Computer: 06,
-        GK: 08,
-      },
+        GK: 08
+      }
 },
       {
       name: "Tejaswi kumar",
@@ -1236,8 +1398,8 @@
         Science: 09,
         SST: 15,
         Computer: 05,
-        GK: 15,
-      },
+        GK: 15
+      }
 },
       {
       name: "Vaishnavi Kumari",
@@ -1251,8 +1413,8 @@
         Science: 06,
         SST: 25,
         Computer: 07,
-        GK: 08,
-      },
+        GK: 08
+      }
 },
       {
       name: "Virat Kumar",
@@ -1266,8 +1428,8 @@
         Science: 06,
         SST: 15,
         Computer: 04,
-        GK: 08,
-      },
+        GK: 08
+      }
  },
             {
       name: "Vaishnavi Priya",
@@ -1281,8 +1443,8 @@
         Science: 23,
         SST: 25,
         Computer: 07,
-        GK: 13,
-      }, 
+        GK: 13
+      } 
  }, 
           {
       name: "Prince Kumar",
@@ -1296,76 +1458,791 @@
         Science: 05,
         SST: 05,
         Computer: 04,
-        GK: 06,
-      },  
+        GK: 06
+      }  
  }, 
     
-      
 
-        
-          
-      
-    // Add more student records here
-  ];
-
-  function searchResults() {
-    const query = document.getElementById("search").value.trim().toLowerCase();
-    const resultsContainer = document.getElementById("results");
-    resultsContainer.innerHTML = "";
-
-    if (query === "") {
-      resultsContainer.innerHTML = `<p class="no-results">Please enter a name or roll number to search.</p>`;
-      return;
+   {
+    name: "Aanchal Rani",
+      roll: "01",
+      class: "6th",
+      subjects: {
+        English: 39,
+        Hindi: 45,
+        Sanskrit: 25,
+        Math: 34,
+        Science: 33,
+        SST: 38,
+        Computer: 37,
+        GK: 43
+      } 
+},
+      {
+      name: "Aman Kumar",
+      roll: "02",
+      class: "6th",
+      subjects: {
+        English: 23,
+        Hindi: 29,
+        Sanskrit: 5,
+        Math: 34,
+        Science: 26,
+        SST: 25,
+        Computer: 18,
+        GK: 33
+      }
+},
+      {
+      name: "Ankit Kumar",
+      roll: "03",
+      class: "6th",
+      subjects: {
+        English: 16,
+        Hindi: 30,
+        Sanskrit: 20,
+        Math: 18,
+        Science: 15,
+        SST: 25,
+        Computer: 7,
+        GK: 28
+      }
+},
+      {
+      name: "Ayush Kumar",
+      roll: "04",
+      class: "6th",
+      subjects: {
+        English: 0,
+        Hindi: 0,
+        Sanskrit: 0,
+        Math: 0,
+        Science: 0,
+        SST: 0,
+        Computer: 0,
+        GK: 0
+      }
+},
+          {
+      name: "Divyanshu Kumar",
+      roll: "05",
+      class: "6th",
+      subjects: {
+        English: 33,
+        Hindi: 36,
+        Sanskrit: 15,
+        Math: 37,
+        Science: 19,
+        SST: 31,
+        Computer: 30,
+        GK: 41
+      }
+},
+      {
+      name: "Himanshu Ranjan",
+      roll: "06",
+      class: "6th",
+      subjects: {
+        English: 32,
+        Hindi: 41,
+        Sanskrit:20,
+        Math: 34,
+        Science: 21,
+        SST: 31,
+        Computer: 32,
+        GK: 44
+      }
+},
+      {
+      name: "Khushi Kumari",
+      roll: "07",
+      class: "6th",
+      subjects: {
+        English: 28,
+        Hindi: 39,
+        Sanskrit: 10,
+        Math: 36,
+        Science: 21,
+        SST: 27,
+        Computer: 23,
+        GK: 32
+      }
+},
+      {
+      name: "Kunal Babu",
+      roll: "08",
+      class: "6th",
+      subjects: {
+        English: 21,
+        Hindi: 27,
+        Sanskrit: 5,
+        Math: 25,
+        Science: 22,
+        SST: 33,
+        Computer: 15,
+        GK: 36
+      }
+},
+            {
+      name: "Md. Dilshan",
+      roll: "09",
+      class: "6th",
+      subjects: {
+        English: 13,
+        Hindi: 32,
+        Sanskrit: 5,
+        Math: 24,
+        Science: 23,
+        SST: 30,
+        Computer: 24,
+        GK: 40
+      }
+},
+          {
+      name: "Minakshi Priya",
+      roll: "10",
+      class: "6th",
+      subjects: {
+        English: 41,
+        Hindi: 49,
+        Sanskrit: 29,
+        Math: 41,
+        Science: 39,
+        SST: 44,
+        Computer: 37,
+        GK: 46
+      } 
+},
+      {
+      name: "Minka Kumari",
+      roll: "11",
+      class: "6th",
+      subjects: {
+        English: 0,
+        Hindi: 0,
+        Sanskrit: 0,
+        Math: 0,
+        Science: 0,
+        SST: 0,
+        Computer: 0,
+        GK: 0
+      }
+},
+      {
+      name: "Prem Kumar",
+      roll: "12",
+      class: "6th",
+      subjects: {
+        English: 0,
+        Hindi: 0,
+        Sanskrit: 0,
+        Math: 0,
+        Science: 0,
+        SST: 0,
+        Computer: 0,
+        GK: 0
+      }
+},
+      {
+      name: "Rakib Dilshad",
+      roll: "13",
+      class: "6th",
+      subjects: {
+        English: 33,
+        Hindi: 42,
+        Sanskrit: 20,
+        Math: 42,
+        Science: 27,
+        SST: 34,
+        Computer: 32,
+        GK: 41
+      }
+},
+          {
+      name:"Ritu Bharti ",
+      roll: "14",
+      class: "6th",
+      subjects: {
+        English: 28,
+        Hindi: 31,
+        Sanskrit: 15,
+        Math: 24,
+        Science: 21,
+        SST: 31,
+        Computer: 25,
+        GK: 41
+      }
+},
+      {
+      name: "Sakib Dilshad ",
+      roll: "15",
+      class: "6th",
+      subjects: {
+        English: 36,
+        Hindi: 37,
+        Sanskrit: 20,
+        Math: 40,
+        Science: 35,
+        SST: 38,
+        Computer: 33,
+        GK: 44
+      }
+},
+      {
+      name: "Saurabh Singh",
+      roll: "16",
+      class: "6th",
+      subjects: {
+        English: 31,
+        Hindi: 24,
+        Sanskrit: 5,
+        Math: 26,
+        Science: 15,
+        SST: 26,
+        Computer: 14,
+        GK: 32
+      }
+},
+      {
+      name: "Smriti Sinha",
+      roll: "17",
+      class: "6th",
+      subjects: {
+        English: 0,
+        Hindi: 0,
+        Sanskrit: 0,
+        Math: 0,
+        Science: 0,
+        SST: 0,
+        Computer: 0,
+        GK: 0
+      }
+},
+            {
+      name: "Varsha Rani",
+      roll: "18",
+      class: "6th",
+      subjects: {
+        English: 32,
+        Hindi: 36,
+        Sanskrit: 25,
+        Math: 28,
+        Science: 22,
+        SST: 37,
+        Computer: 24,
+        GK: 42
+      }
+},
+          {
+      name: "Vidhya Rani",
+      roll: "19",
+      class: "6th",
+      subjects: {
+        English: 22,
+        Hindi: 30,
+        Sanskrit: 20,
+        Math: 23,
+        Science: 19,
+        SST: 33,
+        Computer: 17,
+        GK: 41
+      } 
+},
+      {
+      name:"Vishal Kumar" ,
+      roll: "20",
+      class: "6th",
+      subjects: {
+        English: 0,
+        Hindi: 0,
+        Sanskrit: 0,
+        Math: 0,
+        Science: 0,
+        SST: 0,
+        Computer: 0,
+        GK: 0
+      }
+},
+      {
+      name: "Shalini Singh",
+      roll: "21",
+      class: "6th",
+      subjects: {
+        English: 22,
+        Hindi: 39,
+        Sanskrit: 25,
+        Math: 29,
+        Science: 19,
+        SST: 35,
+        Computer: 18,
+        GK: 41
+      }
+},
+      {
+      name: "Aashish Gautam",
+      roll: "22",
+      class: "6th",
+      subjects: {
+        English: 19,
+        Hindi: 20,
+        Sanskrit: 10,
+        Math: 22,
+        Science: 14,
+        SST: 41,
+        Computer: 10,
+        GK: 40
     }
+},
 
-    const student = students.find(
-      (s) => s.name.toLowerCase().includes(query) || s.roll.includes(query)
-    );
 
-    if (!student) {
-      resultsContainer.innerHTML = `<p class="no-results">No results found. Please enter the name or roll number correctly.</p>`;
-      return;
-    }
 
-    // Calculate total marks and percentage
+{
+      name: "Aashish Kumar",
+      roll: "01",
+      class: "8th",
+      subjects: {
+        English: 23,
+        Hindi: 22,
+        Sanskrit: 15,
+        Math: 0,
+        Science: 28,
+        SST: 32,
+        Computer: 29,
+        GK: 0
+      } 
+},
+      {
+      name: "Abhishek kumar",
+      roll: "02",
+      class: "8th",
+      subjects: {
+        English: 24,
+        Hindi: 10,
+        Sanskrit: 10,
+        Math: 11,
+        Science: 31,
+        SST: 25,
+        Computer: 29,
+        GK: 27
+      }
+},
+      {
+      name: "Ayush Raj",
+      roll: "03",
+      class: "8th",
+      subjects: {
+        English: 43,
+        Hindi: 33,
+        Sanskrit: 24,
+        Math: 14,
+        Science: 44,
+        SST: 46,
+        Computer: 44,
+        GK: 45
+      }
+},
+      {
+      name: "Dheeraj Raj",
+      roll: "04",
+      class: "8th",
+      subjects: {
+        English: 20,
+        Hindi: 10,
+        Sanskrit: 10,
+        Math: 18,
+        Science: 27,
+        SST: 21,
+        Computer: 20,
+        GK: 32
+      }
+},
+          {
+      name: "Dipjoyti Kumari",
+      roll: "05",
+      class: "8th",
+      subjects: {
+        English: 42,
+        Hindi: 35,
+        Sanskrit: 26,
+        Math: 22,
+        Science: 43,
+        SST: 48,
+        Computer: 48,
+        GK: 44
+      }
+},
+      {
+      name: "Sangam kumari",
+      roll: "06",
+      class: "8th",
+      subjects: {
+        English: 34,
+        Hindi: 40,
+        Sanskrit: 36,
+        Math: 22,
+        Science: 47,
+        SST: 50,
+        Computer: 47,
+        GK: 45
+      }
+},
+      {
+      name: "Shivam Kumar",
+      roll: "07",
+      class: "8th",
+      subjects: {
+        English: 34,
+        Hindi: 28,
+        Sanskrit: 25,
+        Math: 15,
+        Science: 36,
+        SST: 42,
+        Computer: 15,
+        GK: 41
+      }
+},
+      {
+      name: "Shristi Kumari",
+      roll: "08",
+      class: "8th",
+      subjects: {
+        English: 29,
+        Hindi: 34,
+        Sanskrit: 25,
+        Math: 14,
+        Science: 46,
+        SST: 40,
+        Computer: 33,
+        GK: 47
+      }
+},
+            {
+      name: "Suhani Kumari",
+      roll: "09",
+      class: "8th",
+      subjects: {
+        English: 29,
+        Hindi: 28,
+        Sanskrit: 25,
+        Math: 16,
+        Science: 36,
+        SST: 40,
+        Computer: 32,
+        GK: 47
+      }
+},
+          {
+      name: "Vikash Kumar",
+      roll: "10",
+      class: "8th",
+      subjects: {
+        English: 4,
+        Hindi: 31,
+        Sanskrit: 25,
+        Math: 17,
+        Science: 30,
+        SST: 36,
+        Computer: 26,
+        GK: 42
+      } 
+},
+      {
+      name: "Vishal Kumar",
+      roll: "11",
+      class: "8th",
+      subjects: {
+        English: 32,
+        Hindi: 25,
+        Sanskrit: 15,
+        Math: 6,
+        Science: 43,
+        SST: 45,
+        Computer: 25,
+        GK: 45
+      }
+},
+
+
+{
+      name: "Amit Raj",
+      roll: "01",
+      class: "7th",
+      subjects: {
+        English: 13,
+        Hindi: 0,
+        Sanskrit: 0,
+        Math: 0,
+        Science: 0,
+        SST: 0,
+        Computer: 0,
+        GK: 17
+      }
+},
+      {
+      name: "Aditya Raj",
+      roll: "02",
+      class: "7th",
+      subjects: {
+        English: 0,
+        Hindi: 0,
+        Sanskrit: 0,
+        Math: 0,
+        Science: 0,
+        SST: 0,
+        Computer: 29,
+        GK: 27
+      }
+},
+      {
+      name: "Ashutosh Kumar",
+      roll: "03",
+      class: "7th",
+      subjects: {
+        English: 19,
+        Hindi: 10,
+        Sanskrit: 15,
+        Math: 12,
+        Science: 6,
+        SST: 16,
+        Computer: 15,
+        GK: 31
+      }
+},
+      {
+      name: "Ankita Kumari",
+      roll: "04",
+      class: "7th",
+      subjects: {
+        English: 33,
+        Hindi: 41,
+        Sanskrit: 34,
+        Math: 22,
+        Science: 17,
+        SST: 19,
+        Computer: 38,
+        GK: 34
+      }
+},
+          {
+      name: "Harshita Bhargav",
+      roll: "05",
+      class: "7th",
+      subjects: {
+        English: 31,
+        Hindi: 25,
+        Sanskrit: 20,
+        Math: 18,
+        Science: 19,
+        SST: 21,
+        Computer: 25,
+        GK: 39
+      }
+},
+      {
+      name: "Janvi kumari",
+      roll: "06",
+      class: "7th",
+      subjects: {
+        English: 41,
+        Hindi: 35,
+        Sanskrit: 20,
+        Math: 26,
+        Science: 25,
+        SST: 20,
+        Computer: 35,
+        GK: 40
+      }
+},
+      {
+      name: "Khushbu Kumari",
+      roll: "07",
+      class: "7th",
+      subjects: {
+        English: 35,
+        Hindi: 33,
+        Sanskrit: 25,
+        Math: 26,
+        Science: 19,
+        SST: 21,
+        Computer: 33,
+        GK: 30
+      }
+},
+      {
+      name: "Khushi Kumari",
+      roll: "08",
+      class: "7th",
+      subjects: {
+        English: 23,
+        Hindi: 15,
+        Sanskrit: 15,
+        Math: 17,
+        Science: 13,
+        SST: 11,
+        Computer: 15,
+        GK: 20
+      }
+},
+            {
+      name: "Priyanshu Kumar",
+      roll: "09",
+      class: "7th",
+      subjects: {
+        English: 21,
+        Hindi: 10,
+        Sanskrit: 20,
+        Math: 22,
+        Science: 12,
+        SST: 17,
+        Computer: 20,
+        GK: 36
+      }
+},
+          {
+      name: "Rashmi Kumari",
+      roll: "10",
+      class: "7th",
+      subjects: {
+        English: 35,
+        Hindi: 30,
+        Sanskrit: 29,
+        Math: 16,
+        Science: 19,
+        SST: 25,
+        Computer: 32,
+        GK: 40
+      }
+},
+      {
+      name: "Ritinjay Kumar",
+      roll: "11",
+      class: "7th",
+      subjects: {
+        English: 30,
+        Hindi: 15,
+        Sanskrit: 15,
+        Math: 19,
+        Science: 11,
+        SST: 10,
+        Computer: 25,
+        GK: 34
+      }
+},
+  {
+      name: "Rishikesh Kumar",
+      roll: "12",
+      class: "7th",
+      subjects: {
+        English: 25,
+        Hindi: 18,
+        Sanskrit: 10,
+        Math: 16,
+        Science: 9,
+        SST: 14,
+        Computer: 5,
+        GK: 28
+      }
+},
+{
+      name: "Rupa Kumari",
+      roll: "13",
+      class: "7th",
+      subjects: {
+        English: 37,
+        Hindi: 27,
+        Sanskrit: 25,
+        Math: 12,
+        Science: 12,
+        SST: 15,
+        Computer: 39,
+        GK: 32
+      }
+},
+ {
+      name: "Saloni Kumari",
+      roll: "14",
+      class: "7th",
+      subjects: {
+        English: 30,
+        Hindi: 25,
+        Sanskrit: 25,
+        Math: 18,
+        Science: 16,
+        SST: 24,
+        Computer: 25,
+        GK: 32
+      }
+},
+   {
+      name: "Yash Raj",
+      roll: "15",
+      class: "7th",
+      subjects: {
+        English: 26,
+        Hindi: 20,
+        Sanskrit: 20,
+        Math: 16,
+        Science: 20,
+        SST: 14,
+        Computer: 41,
+        GK: 41
+      }
+},
+
+
+
+
+    ];
+
+    function searchResults() {
+  const query = document.getElementById('search').value.trim().toLowerCase();
+  const selectedClass = document.getElementById('classSelect').value;
+  const resultsContainer = document.getElementById('results');
+  resultsContainer.style.display = 'none';
+
+  let filteredStudents = students.filter(s => 
+    (selectedClass === 'all' || s.class === selectedClass) &&
+    ((s.name && s.name.toLowerCase().includes(query)) || s.roll.includes(query))
+  );
+
+  if (filteredStudents.length === 0) {
+    resultsContainer.innerHTML = `<p class="no-results">No results found.</p>`;
+    resultsContainer.style.display = 'block';
+    return;
+  }
+
+  resultsContainer.innerHTML = filteredStudents.map(student => {
     const subjects = student.subjects;
     const totalMarks = Object.values(subjects).reduce((sum, marks) => sum + marks, 0);
     const percentage = ((totalMarks / (Object.keys(subjects).length * 50)) * 100).toFixed(2);
-
-    // Display student details and table
-    resultsContainer.innerHTML = `
+    return `
       <div class="student-table-container">
-        <div class="student-details">
-          <p style="text-align: center;"><strong>SIDS VIDYA SANSTHAN</strong></p>
-          <p style="text-align: center;">PT-2 Examination Result</p>
-          <p><strong>Name:</strong> ${student.name}</p>
-          <p><strong>Roll:</strong> ${student.roll}</p>
-          <p><strong>Class:</strong> ${student.class}</p>
-        </div>
+
+          <div class="container_cradential">
+              <div class="box_logo">
+               <img class="sch_logo" src="logo.jpg" alt="SIDS Vidya Sansthan Logo">
+              </div>
+              <div class="box">
+                <h3 class="sc-na"><strong>SIDS VIDYA SANSTHAN</strong></h3>
+                <p class="sc-ex-na" style="text-align: center;">PT-2 Examination Result</p>
+              </div>
+              <div class="box_logo">
+               <img class="sch_logo" src="logo.jpg" alt="SIDS Vidya Sansthan Logo">
+              </div>
+          </div>
+        <p class="sp-p-tl"><strong>Name:</strong> ${student.name || "N/A"}</p>
+        <p class="sp-p-tl"><strong>Roll:</strong> ${student.roll}</p>
+        <p class="sp-p-tl"><strong>Class:</strong> ${student.class}</p>
         <table class="student-table">
-          <thead>
-            <tr>
-              <th>Subject</th>
-              <th>Marks</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${Object.entries(subjects)
-              .map(([subject, marks]) => `<tr><td>${subject}</td><td>${marks}</td></tr>`)
-              .join("")}
-            <tr>
-              <td><strong>Total</strong></td>
-              <td><strong>${totalMarks}</strong></td>
-            </tr>
-            <tr>
-              <td><strong>Percentage</strong></td>
-              <td><strong>${percentage}%</strong></td>
-            </tr>
-          </tbody>
+          <tr><th>Subject</th><th>Marks</th></tr>
+          ${Object.entries(subjects).map(([sub, marks]) => `<tr><td>${sub}</td><td>${marks}</td></tr>`).join('')}
+          <tr><td><strong>Total</strong></td><td><strong>${totalMarks}</strong></td></tr>
+          <tr><td><strong>Percentage</strong></td><td><strong>${percentage}%</strong></td></tr>
         </table>
-      </div>
-    `;
-  }
+      </div>`;
+  }).join('');
+  resultsContainer.style.display = 'block';
+}
     </script>
     
     
